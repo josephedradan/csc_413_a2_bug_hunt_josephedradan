@@ -1,5 +1,5 @@
 # CSC 413 Assignment 2 README
 
-Name: <your name here>
+Name: Joseph Edradan
 
-Email: <your SFSU email here>
+Email: jedradan@mail.sfsu.edu
