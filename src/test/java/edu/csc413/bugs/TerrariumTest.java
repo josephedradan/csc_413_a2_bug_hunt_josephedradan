@@ -108,7 +108,7 @@ public class TerrariumTest {
 
         /**
          * Note that you should not test the implementation of the the get method. You Should test if the position
-         * of the bug is in the correct area.
+         * of the bug is in the correct position.
          */
         @Test
         void getBug_setUpBugsWithCorrespondingIndex_BugSetUpBugsExist_AmountTest4() {
