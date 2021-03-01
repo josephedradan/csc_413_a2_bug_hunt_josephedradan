@@ -1,29 +1,39 @@
 package edu.csc413.bugs;
 
-/** Represents a generic Bug. It is an abstract class, so users cannot instantiate a Bug directly. */
+/**
+ * Represents a generic Bug. It is an abstract class, so users cannot instantiate a Bug directly.
+ */
 public abstract class Bug {
     // Instance variables: every bug has a name and a number of legs.
     private String name;
     private int numLegs;
 
-    /** Creates a Bug with the provided name and number of legs. */
+    /**
+     * Creates a Bug with the provided name and number of legs.
+     */
     public Bug(String name, int numLegs) {
         // TODO ERROR: assignment for both instance variables written incorrectly
-        name = this.name;
-        numLegs = this.numLegs;
+        this.name = name;
+        this.numLegs = numLegs;
     }
 
-    /** Returns the Bug's name. */
+    /**
+     * Returns the Bug's name.
+     */
     public String getName() {
         return name;
     }
 
-    /** Returns the number of legs this Bug has. */
+    /**
+     * Returns the number of legs this Bug has.
+     */
     public int getNumLegs() {
         return numLegs;
     }
 
-    /** Returns true if the Bug can fly, and false otherwise. May be overridden for a Bug type that can fly. */
+    /**
+     * Returns true if the Bug can fly, and false otherwise. May be overridden for a Bug type that can fly.
+     */
     public boolean canFly() {
         return false;
     }
