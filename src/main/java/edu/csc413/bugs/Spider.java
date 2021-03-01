@@ -5,7 +5,6 @@ package edu.csc413.bugs;
  */
 public class Spider extends Bug {
     public Spider(String name) {
-        // TODO ERROR: Wrong number of legs! Should be 8.
         super(name, 8);
     }
 

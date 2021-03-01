@@ -129,12 +129,12 @@ public class TerrariumTest {
             legs6.add(terrarium.getBugWithName("Juice"));
             legs6.add(terrarium.getBugWithName("Boris"));
 
-            ArrayList<Bug> legs10 = new ArrayList<>();
-            legs10.add(terrarium.getBugWithName("Charlotte"));
+            ArrayList<Bug> legs8 = new ArrayList<>();
+            legs8.add(terrarium.getBugWithName("Charlotte"));
 
             Assertions.assertAll(
                     () -> Assertions.assertEquals(terrarium.getBugsWithLegs(6), legs6),
-                    () -> Assertions.assertEquals(terrarium.getBugsWithLegs(8), legs10)
+                    () -> Assertions.assertEquals(terrarium.getBugsWithLegs(8), legs8)
             );
         }
     }
