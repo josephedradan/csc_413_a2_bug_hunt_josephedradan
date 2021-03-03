@@ -46,11 +46,23 @@ public class TerrariumTest {
         Assertions.assertDoesNotThrow(Terrarium::new);
     }
 
+    /**
+     * Test Terrarium's setUpBugs method will run
+     * Can't really verify that a known, fixed input produces a known fixed output
+     * this mothod should not throw
+     */
+    @DisplayName("setUpBugs_setUpBugs_Success (setUpBugs is assumed to be hard coded)")
+//        @Disabled
+    @Test
+    void setUpBugs_setUpBugs_Success() {
+        Terrarium terrarium = new Terrarium();
+        Assertions.assertDoesNotThrow(terrarium::setUpBugs);
+    }
 
     /**
      * Assumes that Default Terrarium works
      */
-    @DisplayName("Terrarium Default Constructor (Assuming that it works)")
+    @DisplayName("Terrarium Default Constructor with setUpBugs call (Assuming that it works)")
     @Nested
     class TerrariumDefault {
 
@@ -59,18 +71,7 @@ public class TerrariumTest {
         @BeforeEach
         void setUp() {
             terrarium = new Terrarium();
-        }
-
-        /**
-         * Test Terrarium's setUpBugs method will run
-         * Can't really verify that a known, fixed input produces a known fixed output
-         * this mothod should not throw
-         */
-        @DisplayName("setUpBugs_setUpBugs_Success (setUpBugs is assumed to be hard coded)")
-//        @Disabled
-        @Test
-        void setUpBugs_setUpBugs_Success() {
-            Assertions.assertDoesNotThrow(() -> terrarium.setUpBugs());
+            terrarium.setUpBugs();
         }
 
         /**
@@ -79,8 +80,6 @@ public class TerrariumTest {
          */
         @Test
         void getNumBugs_setUpBugs_AmountBugSetUpBugs3() {
-            terrarium.setUpBugs();
-
             Assertions.assertEquals(terrarium.getNumBugs(), 3);
         }
 
@@ -89,8 +88,6 @@ public class TerrariumTest {
          */
         @Test
         void getBugWithName_setUpBugsWithCorrespondingName_BugSetUpBugsExist_AmountTest4() {
-            terrarium.setUpBugs();
-
             Assertions.assertAll(
                     () -> Assertions.assertNotNull(terrarium.getBugWithName("Juice")),
                     () -> Assertions.assertNotNull(terrarium.getBugWithName("Charlotte")),
@@ -100,8 +97,6 @@ public class TerrariumTest {
 
         @Test
         void getBugWIthName_NonExistingName_null() {
-            terrarium.setUpBugs();
-
             Assertions.assertNull(terrarium.getBugWithName("Obama"));
 
         }
@@ -112,8 +107,6 @@ public class TerrariumTest {
          */
         @Test
         void getBug_setUpBugsWithCorrespondingIndex_BugSetUpBugsExist_AmountTest4() {
-            terrarium.setUpBugs();
-
             Assertions.assertAll(
                     () -> Assertions.assertEquals(terrarium.getBug(0), terrarium.getBugWithName("Juice")),
                     () -> Assertions.assertEquals(terrarium.getBug(1), terrarium.getBugWithName("Charlotte")),
@@ -123,8 +116,6 @@ public class TerrariumTest {
 
         @Test
         void getBugsWithLegs_setUpBugs_ArraylistBug_AmountTest2() {
-            terrarium.setUpBugs();
-
             ArrayList<Bug> legs6 = new ArrayList<>();
             legs6.add(terrarium.getBugWithName("Juice"));
             legs6.add(terrarium.getBugWithName("Boris"));
