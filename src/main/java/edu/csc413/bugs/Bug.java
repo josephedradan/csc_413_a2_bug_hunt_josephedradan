@@ -12,7 +12,6 @@ public abstract class Bug {
      * Creates a Bug with the provided name and number of legs.
      */
     public Bug(String name, int numLegs) {
-        // TODO ERROR: assignment for both instance variables written incorrectly
         this.name = name;
         this.numLegs = numLegs;
     }
